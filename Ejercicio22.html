@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let dato, mes, dias;
+        dato = prompt("Introduce el número del mes",'');
+        mes = parseInt(dato)
+        if (mes!==0 && mes <=12 && !isNaN(mes)) {
+        if (mes===2) {
+            console.log('1');
+            dias ='Tiene 28 días';
+        } else if((mes<=7&& mes%2!==0||(mes >7 && mes%2===0))) {
+            console.log('2');
+            dias = 'Tiene 31 días';
+        }else{
+            console.log('3');
+            dias = 'Tiene 30 días';
+        } 
+        } else {
+            mes= 0;
+            dias= `El valor ${dato} no es válido`;
+        }
+        document.write(`<h2>Mes ${mes} ${dias} </h2>`);
+    </script>
+</head>
+</html>
