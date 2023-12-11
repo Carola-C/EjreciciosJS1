@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function funcionUno(){
+            let result = "";
+            let i;
+            for (i = 1; i <= 6; i++) {
+                result = result + `<h${i}> Título ${i} </h>`;
+                
+            }
+            document.getElementById("central").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <p>Pulsa el botón y se crean HTML tags de la 1  la 6</p>
+    <button onclick="funcionUno()">Pulsa aquí</button>
+    <div id="central"></div>
+</body>
+</html>
