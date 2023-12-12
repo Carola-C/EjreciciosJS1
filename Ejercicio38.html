@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ObjectInterface - Clases</title>
+    <script>
+        let ficha =(function(){
+            let alumno; this.alumno ="Marga";
+            return{ inicio(){
+                this.alumno = "Cárol";
+            }, verNombre(){
+                return this.alumno;
+            },
+
+            } //Fin return
+        })(); //Fin 'clase'
+        function programa(){ficha.inicio();
+            document.writeln(`El nombre es ${ficha.verNombre()} <br>`);
+        }
+    </script>
+</head>
+<body>
+    <h3>Clase ficha</h3>
+    <input type="button" value="Pulsa aquí" onclick="programa()">
+</body>
+</html>
