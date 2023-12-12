@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function convertirCaF(){
+            let dato = parseInt(document.convertidorCF.temp.value);
+            let resultado = dato*1.8 + 32;
+            document.getElementById("resultado").innerHTML=`°C es ${resultado}°F`
+            leyendaFahrenheit(resultado);
+        }
+        function leyendaFahrenheit(fahren){
+            let dato = parseInt(fahren);
+            var leyenda;
+            if (dato >=14 && dato < 32) {
+                leyenda = 'Temperatura baja (°F)';
+            } else if (dato >= 32 && dato < 68) {
+                leyenda = 'Temperatura adecuada (°F)';
+            } else if (dato >= 68 && dato < 96) {
+                leyenda = 'Temperatura alta (°F)';
+            } else{
+                leyenda = 'Temperatura desconocida (°F)';
+            }
+            document.getElementById("leyenda").innerHTML = leyenda;
+        }
+        function convertirFaC(){
+            let dato = parseInt(document.convertidorCF.temp.value);
+            let resultado = (dato- 32)/1.8;
+            document.getElementById("resultado").innerHTML=`°F es ${resultado}°C`
+            leyendaFahrenheit(dato);
+        }
+    </script>
+</head>
+<body>
+    <form name="convertidorCF">
+        Ingresa temperatura <input type="text" name="temp" size="5">
+        <span id="resultado"></span>
+        <p id="leyenda"></p>
+        <input type="button" value="Convertir °C a °F" onclick="convertirCaF()">
+        <input type="button" value="Convertir °F a °C" onclick="convertirFaC()">
+    </form>
+</body>
+</html>
